@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder package-path="src.main.java.service">
+    <author>Yevgen Kogut</author>
+    <namespace>UserServices</namespace>
+    <entity name="Users" local-service="true" remote-service="false">
+        <column name="userId" type="long" primary="true" />
+        <column name="userName" type="String" />
+        <column name="email" type="String" />
+        <column name="text" type="String" />
+        <order by="asc">
+            <order-column name="userName" />
+        </order>
+        <finder name="" return-type="Collection">
+            <finder-column name="userId" />
+            <finder-column name="userName" />
+        </finder>
+        <finder name="userId" return-type="Collection">
+            <finder-column name="userId" />
+        </finder>
+        <finder name="userName" return-type="Collection">
+            <finder-column name="userName" />
+        </finder>
+        <finder name="text" return-type="Collection">
+            <finder-column name="text" />
+        </finder>
+    </entity>
+</service-builder>

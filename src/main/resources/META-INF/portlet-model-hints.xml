@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="userService.model.Users">
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="email" type="String" />
+		<field name="text" type="String" />
+	</model>
+</model-hints>
