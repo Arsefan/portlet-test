@@ -18,4 +18,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>portlet-test2 my first whith db</b>.
+This is the <b>portlet-test2  db</b>.
