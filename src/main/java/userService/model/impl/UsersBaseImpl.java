@@ -3,6 +3,7 @@ package userService.model.impl;
 import com.liferay.portal.kernel.exception.SystemException;
 
 import userService.model.Users;
+
 import userService.service.UsersLocalServiceUtil;
 
 /**
@@ -14,7 +15,7 @@ import userService.service.UsersLocalServiceUtil;
  *
  * @author Yevgen Kogut
  * @see UsersImpl
- * @see Users
+ * @see userService.model.Users
  * @generated
  */
 public abstract class UsersBaseImpl extends UsersModelImpl implements Users {

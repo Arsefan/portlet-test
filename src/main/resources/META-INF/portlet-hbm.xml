@@ -8,8 +8,8 @@
 		<id name="userId" type="long">
 			<generator class="assigned" />
 		</id>
-		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="text" type="com.liferay.portal.dao.orm.hibernate.StringType" column="text_" />
+		<property name="userName" type="String" />
+		<property name="email" type="String" />
+		<property name="text" type="String" column="text_" />
 	</class>
 </hibernate-mapping>

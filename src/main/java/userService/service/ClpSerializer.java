@@ -11,7 +11,6 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
-import userService.NoSuchUsersException;
 import userService.model.UsersClp;
 
 import java.io.ObjectInputStream;
@@ -133,8 +132,7 @@ public class ClpSerializer {
 
         String oldModelClassName = oldModelClass.getName();
 
-        if (oldModelClassName.equals(
-                    "UsersImpl")) {
+        if (oldModelClassName.equals("userService.model.impl.UsersImpl")) {
             return translateOutputUsers(oldModel);
         } else if (oldModelClassName.endsWith("Clp")) {
             try {
@@ -244,8 +242,8 @@ public class ClpSerializer {
             return new SystemException();
         }
 
-        if (className.equals("NoSuchUsersException")) {
-            return new NoSuchUsersException();
+        if (className.equals("userService.NoSuchUsersException")) {
+            return new userService.NoSuchUsersException();
         }
 
         return throwable;

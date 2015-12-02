@@ -27,9 +27,13 @@ import com.liferay.portal.model.ModelListener;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 
 import userService.NoSuchUsersException;
+
 import userService.model.Users;
+
 import userService.model.impl.UsersImpl;
 import userService.model.impl.UsersModelImpl;
+
+import userService.service.persistence.UsersPersistence;
 
 import java.io.Serializable;
 
@@ -214,7 +218,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns a range of all the userses where userId = &#63; and userName = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userId the user ID
@@ -234,7 +238,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns an ordered range of all the userses where userId = &#63; and userName = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userId the user ID
@@ -365,7 +369,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userName the user name
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -421,7 +425,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userName the user name
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -577,7 +581,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns a range of all the userses where userId = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userId the user ID
@@ -596,7 +600,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns an ordered range of all the userses where userId = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userId the user ID
@@ -704,7 +708,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userId the user ID
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -755,7 +759,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userId the user ID
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -890,7 +894,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns a range of all the userses where userName = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userName the user name
@@ -909,7 +913,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns an ordered range of all the userses where userName = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param userName the user name
@@ -1029,7 +1033,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userName the user name
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1080,7 +1084,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userName the user name
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1139,7 +1143,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param userName the user name
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next users
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1371,7 +1375,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns a range of all the userses where text = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param text the text
@@ -1390,7 +1394,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns an ordered range of all the userses where text = &#63;.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param text the text
@@ -1510,7 +1514,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param text the text
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1561,7 +1565,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param text the text
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching users
-     * @throws NoSuchUsersException if a matching users could not be found
+     * @throws userService.NoSuchUsersException if a matching users could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1619,7 +1623,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * @param text the text
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next users
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1933,7 +1937,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      *
      * @param userId the primary key of the users
      * @return the users that was removed
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -1947,7 +1951,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      *
      * @param primaryKey the primary key of the users
      * @return the users that was removed
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -2010,7 +2014,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
     }
 
     @Override
-    public Users updateImpl(Users users)
+    public Users updateImpl(userService.model.Users users)
         throws SystemException {
         users = toUnwrappedModel(users);
 
@@ -2139,7 +2143,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      *
      * @param primaryKey the primary key of the users
      * @return the users
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -2160,11 +2164,11 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
     }
 
     /**
-     * Returns the users with the primary key or throws a {@link NoSuchUsersException} if it could not be found.
+     * Returns the users with the primary key or throws a {@link userService.NoSuchUsersException} if it could not be found.
      *
      * @param userId the primary key of the users
      * @return the users
-     * @throws NoSuchUsersException if a users with the primary key could not be found
+     * @throws userService.NoSuchUsersException if a users with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
@@ -2244,7 +2248,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns a range of all the userses.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param start the lower bound of the range of userses
@@ -2261,7 +2265,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
      * Returns an ordered range of all the userses.
      *
      * <p>
-     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
      * @param start the lower bound of the range of userses
@@ -2405,7 +2409,7 @@ public class UsersPersistenceImpl extends BasePersistenceImpl<Users>
     public void afterPropertiesSet() {
         String[] listenerClassNames = StringUtil.split(GetterUtil.getString(
                     com.liferay.util.service.ServiceProps.get(
-                        "value.object.listener.Users")));
+                        "value.object.listener.userService.model.Users")));
 
         if (listenerClassNames.length > 0) {
             try {

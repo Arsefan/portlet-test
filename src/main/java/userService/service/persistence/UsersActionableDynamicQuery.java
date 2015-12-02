@@ -4,7 +4,7 @@ import com.liferay.portal.kernel.dao.orm.BaseActionableDynamicQuery;
 import com.liferay.portal.kernel.exception.SystemException;
 
 import userService.model.Users;
-import userService.service.ClpSerializer;
+
 import userService.service.UsersLocalServiceUtil;
 
 /**
@@ -17,7 +17,7 @@ public abstract class UsersActionableDynamicQuery
         setBaseLocalService(UsersLocalServiceUtil.getService());
         setClass(Users.class);
 
-        setClassLoader(ClpSerializer.class.getClassLoader());
+        setClassLoader(userService.service.ClpSerializer.class.getClassLoader());
 
         setPrimaryKeyPropertyName("userId");
     }

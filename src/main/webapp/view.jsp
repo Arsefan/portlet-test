@@ -18,4 +18,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>portlet-test2. I send message!</b>.
+This is the <b>portlet-test2  db</b>.

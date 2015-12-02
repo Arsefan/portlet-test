@@ -1,7 +1,6 @@
 package userService.service;
 
 import com.liferay.portal.service.InvokableLocalService;
-import userService.model.Users;
 
 /**
  * @author Yevgen Kogut
@@ -51,9 +50,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
 
         _methodName0 = "addUsers";
 
-        _methodParameterTypes0 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes0 = new String[] { "userService.model.Users" };
 
         _methodName1 = "createUsers";
 
@@ -65,9 +62,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
 
         _methodName3 = "deleteUsers";
 
-        _methodParameterTypes3 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes3 = new String[] { "userService.model.Users" };
 
         _methodName4 = "dynamicQuery";
 
@@ -127,9 +122,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
 
         _methodName15 = "updateUsers";
 
-        _methodParameterTypes15 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes15 = new String[] { "userService.model.Users" };
 
         _methodName16 = "getBeanIdentifier";
 
@@ -141,8 +134,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
     }
 
     @Override
-    public Users addUsers(
-        Users users)
+    public userService.model.Users addUsers(userService.model.Users users)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -165,11 +157,11 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
-    public Users createUsers(long userId) {
+    public userService.model.Users createUsers(long userId) {
         Object returnObj = null;
 
         try {
@@ -186,11 +178,11 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
-    public Users deleteUsers(long userId)
+    public userService.model.Users deleteUsers(long userId)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
@@ -217,12 +209,11 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
-    public Users deleteUsers(
-        Users users)
+    public userService.model.Users deleteUsers(userService.model.Users users)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -245,7 +236,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
@@ -434,7 +425,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
     }
 
     @Override
-    public Users fetchUsers(long userId)
+    public userService.model.Users fetchUsers(long userId)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -456,11 +447,11 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
-    public Users getUsers(long userId)
+    public userService.model.Users getUsers(long userId)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
@@ -487,7 +478,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
@@ -524,8 +515,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
     }
 
     @Override
-    public java.util.List<Users> getUserses(
-        int start, int end)
+    public java.util.List<userService.model.Users> getUserses(int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -547,7 +537,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (java.util.List<Users>) ClpSerializer.translateOutput(returnObj);
+        return (java.util.List<userService.model.Users>) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
@@ -577,8 +567,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
     }
 
     @Override
-    public Users updateUsers(
-        Users users)
+    public userService.model.Users updateUsers(userService.model.Users users)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -601,7 +590,7 @@ public class UsersLocalServiceClp implements UsersLocalService {
             }
         }
 
-        return (Users) ClpSerializer.translateOutput(returnObj);
+        return (userService.model.Users) ClpSerializer.translateOutput(returnObj);
     }
 
     @Override
