@@ -6,6 +6,9 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.mail.MailMessage;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import userService.model.UsersClp;
+import userService.service.UsersLocalService;
+import userService.service.UsersLocalServiceClp;
+import userService.service.UsersLocalServiceUtil;
 import userService.service.UsersLocalServiceWrapper;
 import userService.service.impl.UsersLocalServiceImpl;
 
@@ -16,50 +19,59 @@ import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
+import java.io.Writer;
 
 public class MyPortlet extends MVCPortlet{
 
+//    @Override
+//    public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
+//        super.doView(renderRequest, renderResponse);
+//        UsersClp usersClp = new UsersClp();
+//        usersClp.setUserName("Yevgen"); //usersClp.setUserName(request.getParameter("name"));
+//        usersClp.setEmail("evgen.kogut.89@gmail.com"); //usersClp.setEmail(request.getParameter("email"));
+//        usersClp.setText("test text"); //usersClp.setText(request.getParameter("text"));
+////
+////        UsersLocalServiceWrapper usersLocalServiceWrapper = new UsersLocalServiceWrapper(new UsersLocalServiceImpl());
+////        try {
+////            usersLocalServiceWrapper.addUsers(usersClp);
+////        } catch (SystemException e) {
+////            e.printStackTrace();
+////        }
+//        try {
+//            sendMailMessage(usersClp);
+//            Writer w = renderResponse.getWriter();
+//            w.write("message");
+//        } catch (AddressException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     @Override
-    public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-        super.doView(renderRequest, renderResponse);
+    public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
+        super.render(request, response);
         UsersClp usersClp = new UsersClp();
         usersClp.setUserName("Yevgen"); //usersClp.setUserName(request.getParameter("name"));
         usersClp.setEmail("evgen.kogut.89@gmail.com"); //usersClp.setEmail(request.getParameter("email"));
         usersClp.setText("test text"); //usersClp.setText(request.getParameter("text"));
 
-        UsersLocalServiceWrapper usersLocalServiceWrapper = new UsersLocalServiceWrapper(new UsersLocalServiceImpl());
+//        UsersLocalServiceClp usersLocalServiceClp = new UsersLocalServiceClp(UsersLocalServiceUtil.getService());
+//        UsersLocalServiceWrapper usersLocalServiceWrapper = new UsersLocalServiceWrapper(UsersLocalServiceUtil.getService());
         try {
-            usersLocalServiceWrapper.addUsers(usersClp);
+            if(usersClp == null)
+                return;
+//            usersLocalServiceClp.addUsers(usersClp);
+            UsersLocalServiceUtil.addUsers(usersClp);
         } catch (SystemException e) {
             e.printStackTrace();
         }
         try {
             sendMailMessage(usersClp);
+            Writer w = response.getWriter();
+            w.write("message");
         } catch (AddressException e) {
             e.printStackTrace();
         }
     }
-
-//    @Override
-//    public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
-//        super.render(request, response);
-//        UsersClp usersClp = new UsersClp();
-//        usersClp.setUserName("Yevgen"); //usersClp.setUserName(request.getParameter("name"));
-//        usersClp.setEmail("evgen.kogut.89@gmail.com"); //usersClp.setEmail(request.getParameter("email"));
-//        usersClp.setText("test text"); //usersClp.setText(request.getParameter("text"));
-//
-//        UsersLocalServiceWrapper usersLocalServiceWrapper = new UsersLocalServiceWrapper(new UsersLocalServiceImpl());
-//        try {
-//            usersLocalServiceWrapper.addUsers(usersClp);
-//        } catch (SystemException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            sendMailMessage(usersClp);
-//        } catch (AddressException e) {
-//            e.printStackTrace();
-//        }
-//    }
     public void sendMailMessage(@NotNull UsersClp user)
             throws IOException, PortletException, AddressException {
         System.out.println("====sendMailMessage===");
@@ -69,7 +81,7 @@ public class MyPortlet extends MVCPortlet{
 //        String receiverMailAddress=ParamUtil.getString(actionRequest,"receiverEmailAddess");
         String mailSubject = "testPortlet";
         String mailBody = user.getUserName() + " send mail to you";
-        String senderMailAddress = "liferay@gmail.com";
+        String senderMailAddress = "Arsefan@@i.ua";
         String receiverMailAddress = "evgen.kogut.89@gmail.com";
 
         try {

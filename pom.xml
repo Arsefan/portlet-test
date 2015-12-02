@@ -3,7 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>KYAGroup</groupId>
-	<artifactId>portlet-test2</artifactId>
+	<artifactId>mail-portlet</artifactId>
 	<packaging>war</packaging>
 	<name>portlet-test2 Portlet</name>
 	<version>1.0</version>
@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<liferay.version>6.2.2</liferay.version>
 		<liferay.maven.plugin.version>6.2.2</liferay.maven.plugin.version>
-		<liferay.home.dir>D:/JetBrains/liferay-portal-6.2-ce-ga4</liferay.home.dir>
+		<liferay.home.dir>C:/IDE/liferay-portal-6.2-ce-ga4</liferay.home.dir>
 		<liferay.auto.deploy.dir>${liferay.home.dir}/deploy</liferay.auto.deploy.dir>
 	</properties>
 
@@ -51,6 +51,7 @@
 					<appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>
 					<liferayVersion>${liferay.version}</liferayVersion>
 					<pluginType>portlet</pluginType>
+					<pluginName>mail-portlet</pluginName>
 				</configuration>
 			</plugin>
 			<plugin>

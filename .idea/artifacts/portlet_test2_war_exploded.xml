@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="portlet-test2:war exploded">
-    <output-path>D:/JetBrains/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/webapps/ROOT</output-path>
+    <output-path>$PROJECT_DIR$/target/mail-portlet-1.0</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -8,7 +8,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/portlet-test2-1.0/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/mail-portlet-1.0/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="portlet-test2/web/Web" />
     </root>

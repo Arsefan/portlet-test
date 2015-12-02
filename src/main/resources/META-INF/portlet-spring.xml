@@ -3,4 +3,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<bean id="userService.service.UsersLocalService" class="userService.service.impl.UsersLocalServiceImpl" />
 	<bean id="userService.service.persistence.UsersPersistence" class="userService.service.persistence.UsersPersistenceImpl" parent="basePersistence" />
+	<!--<bean id="EntityFinderUtil" class="sut.mahdi.portletName.service.persistence.EntityFinderUtil" >-->
+		<!--<property name="finder" ref="portlet-test2.service.persistence.EntityFinder"></property>-->
+	<!--</bean>-->
 </beans>
