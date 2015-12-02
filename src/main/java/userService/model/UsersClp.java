@@ -26,7 +26,7 @@ public class UsersClp extends BaseModelImpl<Users> implements Users {
     private String _email;
     private String _text;
     private BaseModel<?> _usersRemoteModel;
-    private Class<?> _clpSerializerClass = ClpSerializer.class;
+    private Class<?> _clpSerializerClass = userService.service.ClpSerializer.class;
 
     public UsersClp() {
     }
@@ -338,7 +338,7 @@ public class UsersClp extends BaseModelImpl<Users> implements Users {
         StringBundler sb = new StringBundler(16);
 
         sb.append("<model><model-name>");
-        sb.append("Users");
+        sb.append("userService.model.Users");
         sb.append("</model-name>");
 
         sb.append(

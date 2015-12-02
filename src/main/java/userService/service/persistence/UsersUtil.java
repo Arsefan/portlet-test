@@ -7,10 +7,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.ReferenceRegistry;
 import com.liferay.portal.service.ServiceContext;
 
-import userService.NoSuchUsersException;
 import userService.model.Users;
-import userService.model.impl.UsersModelImpl;
-import userService.service.ClpSerializer;
 
 import java.util.List;
 
@@ -107,8 +104,8 @@ public class UsersUtil {
     * @return the matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBy(
-        long userId, java.lang.String userName)
+    public static java.util.List<userService.model.Users> findBy(long userId,
+        java.lang.String userName)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findBy(userId, userName);
     }
@@ -117,7 +114,7 @@ public class UsersUtil {
     * Returns a range of all the userses where userId = &#63; and userName = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userId the user ID
@@ -127,8 +124,8 @@ public class UsersUtil {
     * @return the range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBy(
-        long userId, java.lang.String userName, int start, int end)
+    public static java.util.List<userService.model.Users> findBy(long userId,
+        java.lang.String userName, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findBy(userId, userName, start, end);
     }
@@ -137,7 +134,7 @@ public class UsersUtil {
     * Returns an ordered range of all the userses where userId = &#63; and userName = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userId the user ID
@@ -148,8 +145,8 @@ public class UsersUtil {
     * @return the ordered range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBy(
-        long userId, java.lang.String userName, int start, int end,
+    public static java.util.List<userService.model.Users> findBy(long userId,
+        java.lang.String userName, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence()
@@ -163,14 +160,14 @@ public class UsersUtil {
     * @param userName the user name
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findBy_First(long userId,
+    public static userService.model.Users findBy_First(long userId,
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findBy_First(userId, userName, orderByComparator);
     }
 
@@ -183,7 +180,7 @@ public class UsersUtil {
     * @return the first matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchBy_First(long userId,
+    public static userService.model.Users fetchBy_First(long userId,
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -198,14 +195,14 @@ public class UsersUtil {
     * @param userName the user name
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findBy_Last(long userId,
+    public static userService.model.Users findBy_Last(long userId,
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findBy_Last(userId, userName, orderByComparator);
     }
 
@@ -218,7 +215,7 @@ public class UsersUtil {
     * @return the last matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchBy_Last(long userId,
+    public static userService.model.Users fetchBy_Last(long userId,
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -257,7 +254,7 @@ public class UsersUtil {
     * @return the matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserId(
+    public static java.util.List<userService.model.Users> findByuserId(
         long userId) throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findByuserId(userId);
     }
@@ -266,7 +263,7 @@ public class UsersUtil {
     * Returns a range of all the userses where userId = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userId the user ID
@@ -275,7 +272,7 @@ public class UsersUtil {
     * @return the range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserId(
+    public static java.util.List<userService.model.Users> findByuserId(
         long userId, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findByuserId(userId, start, end);
@@ -285,7 +282,7 @@ public class UsersUtil {
     * Returns an ordered range of all the userses where userId = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userId the user ID
@@ -295,7 +292,7 @@ public class UsersUtil {
     * @return the ordered range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserId(
+    public static java.util.List<userService.model.Users> findByuserId(
         long userId, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -309,14 +306,13 @@ public class UsersUtil {
     * @param userId the user ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findByuserId_First(
-        long userId,
+    public static userService.model.Users findByuserId_First(long userId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findByuserId_First(userId, orderByComparator);
     }
 
@@ -328,8 +324,7 @@ public class UsersUtil {
     * @return the first matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchByuserId_First(
-        long userId,
+    public static userService.model.Users fetchByuserId_First(long userId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().fetchByuserId_First(userId, orderByComparator);
@@ -341,14 +336,13 @@ public class UsersUtil {
     * @param userId the user ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findByuserId_Last(
-        long userId,
+    public static userService.model.Users findByuserId_Last(long userId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findByuserId_Last(userId, orderByComparator);
     }
 
@@ -360,8 +354,7 @@ public class UsersUtil {
     * @return the last matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchByuserId_Last(
-        long userId,
+    public static userService.model.Users fetchByuserId_Last(long userId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().fetchByuserId_Last(userId, orderByComparator);
@@ -397,7 +390,7 @@ public class UsersUtil {
     * @return the matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserName(
+    public static java.util.List<userService.model.Users> findByuserName(
         java.lang.String userName)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findByuserName(userName);
@@ -407,7 +400,7 @@ public class UsersUtil {
     * Returns a range of all the userses where userName = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userName the user name
@@ -416,7 +409,7 @@ public class UsersUtil {
     * @return the range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserName(
+    public static java.util.List<userService.model.Users> findByuserName(
         java.lang.String userName, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findByuserName(userName, start, end);
@@ -426,7 +419,7 @@ public class UsersUtil {
     * Returns an ordered range of all the userses where userName = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param userName the user name
@@ -436,7 +429,7 @@ public class UsersUtil {
     * @return the ordered range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findByuserName(
+    public static java.util.List<userService.model.Users> findByuserName(
         java.lang.String userName, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -450,14 +443,14 @@ public class UsersUtil {
     * @param userName the user name
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findByuserName_First(
+    public static userService.model.Users findByuserName_First(
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findByuserName_First(userName, orderByComparator);
     }
 
@@ -469,7 +462,7 @@ public class UsersUtil {
     * @return the first matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchByuserName_First(
+    public static userService.model.Users fetchByuserName_First(
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -483,14 +476,14 @@ public class UsersUtil {
     * @param userName the user name
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findByuserName_Last(
+    public static userService.model.Users findByuserName_Last(
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findByuserName_Last(userName, orderByComparator);
     }
 
@@ -502,7 +495,7 @@ public class UsersUtil {
     * @return the last matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchByuserName_Last(
+    public static userService.model.Users fetchByuserName_Last(
         java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -516,14 +509,14 @@ public class UsersUtil {
     * @param userName the user name
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the previous, current, and next users
-    * @throws NoSuchUsersException if a users with the primary key could not be found
+    * @throws userService.NoSuchUsersException if a users with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users[] findByuserName_PrevAndNext(
+    public static userService.model.Users[] findByuserName_PrevAndNext(
         long userId, java.lang.String userName,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence()
                    .findByuserName_PrevAndNext(userId, userName,
             orderByComparator);
@@ -559,7 +552,7 @@ public class UsersUtil {
     * @return the matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBytext(
+    public static java.util.List<userService.model.Users> findBytext(
         java.lang.String text)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findBytext(text);
@@ -569,7 +562,7 @@ public class UsersUtil {
     * Returns a range of all the userses where text = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param text the text
@@ -578,7 +571,7 @@ public class UsersUtil {
     * @return the range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBytext(
+    public static java.util.List<userService.model.Users> findBytext(
         java.lang.String text, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findBytext(text, start, end);
@@ -588,7 +581,7 @@ public class UsersUtil {
     * Returns an ordered range of all the userses where text = &#63;.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param text the text
@@ -598,7 +591,7 @@ public class UsersUtil {
     * @return the ordered range of matching userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findBytext(
+    public static java.util.List<userService.model.Users> findBytext(
         java.lang.String text, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -611,14 +604,14 @@ public class UsersUtil {
     * @param text the text
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findBytext_First(
+    public static userService.model.Users findBytext_First(
         java.lang.String text,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findBytext_First(text, orderByComparator);
     }
 
@@ -630,7 +623,7 @@ public class UsersUtil {
     * @return the first matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchBytext_First(
+    public static userService.model.Users fetchBytext_First(
         java.lang.String text,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -643,14 +636,14 @@ public class UsersUtil {
     * @param text the text
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching users
-    * @throws NoSuchUsersException if a matching users could not be found
+    * @throws userService.NoSuchUsersException if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findBytext_Last(
+    public static userService.model.Users findBytext_Last(
         java.lang.String text,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findBytext_Last(text, orderByComparator);
     }
 
@@ -662,7 +655,7 @@ public class UsersUtil {
     * @return the last matching users, or <code>null</code> if a matching users could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchBytext_Last(
+    public static userService.model.Users fetchBytext_Last(
         java.lang.String text,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
@@ -676,14 +669,14 @@ public class UsersUtil {
     * @param text the text
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the previous, current, and next users
-    * @throws NoSuchUsersException if a users with the primary key could not be found
+    * @throws userService.NoSuchUsersException if a users with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users[] findBytext_PrevAndNext(
+    public static userService.model.Users[] findBytext_PrevAndNext(
         long userId, java.lang.String text,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence()
                    .findBytext_PrevAndNext(userId, text, orderByComparator);
     }
@@ -716,7 +709,7 @@ public class UsersUtil {
     *
     * @param users the users
     */
-    public static void cacheResult(Users users) {
+    public static void cacheResult(userService.model.Users users) {
         getPersistence().cacheResult(users);
     }
 
@@ -726,7 +719,7 @@ public class UsersUtil {
     * @param userses the userses
     */
     public static void cacheResult(
-        java.util.List<Users> userses) {
+        java.util.List<userService.model.Users> userses) {
         getPersistence().cacheResult(userses);
     }
 
@@ -736,7 +729,7 @@ public class UsersUtil {
     * @param userId the primary key for the new users
     * @return the new users
     */
-    public static Users create(long userId) {
+    public static userService.model.Users create(long userId) {
         return getPersistence().create(userId);
     }
 
@@ -745,33 +738,32 @@ public class UsersUtil {
     *
     * @param userId the primary key of the users
     * @return the users that was removed
-    * @throws NoSuchUsersException if a users with the primary key could not be found
+    * @throws userService.NoSuchUsersException if a users with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users remove(long userId)
+    public static userService.model.Users remove(long userId)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().remove(userId);
     }
 
-    public static Users updateImpl(
-        Users users)
+    public static userService.model.Users updateImpl(
+        userService.model.Users users)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().updateImpl(users);
     }
 
     /**
-    * Returns the users with the primary key or throws a {@link NoSuchUsersException} if it could not be found.
+    * Returns the users with the primary key or throws a {@link userService.NoSuchUsersException} if it could not be found.
     *
     * @param userId the primary key of the users
     * @return the users
-    * @throws NoSuchUsersException if a users with the primary key could not be found
+    * @throws userService.NoSuchUsersException if a users with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users findByPrimaryKey(
-        long userId)
+    public static userService.model.Users findByPrimaryKey(long userId)
         throws com.liferay.portal.kernel.exception.SystemException,
-            NoSuchUsersException {
+            userService.NoSuchUsersException {
         return getPersistence().findByPrimaryKey(userId);
     }
 
@@ -782,8 +774,8 @@ public class UsersUtil {
     * @return the users, or <code>null</code> if a users with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static Users fetchByPrimaryKey(
-        long userId) throws com.liferay.portal.kernel.exception.SystemException {
+    public static userService.model.Users fetchByPrimaryKey(long userId)
+        throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().fetchByPrimaryKey(userId);
     }
 
@@ -793,7 +785,7 @@ public class UsersUtil {
     * @return the userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findAll()
+    public static java.util.List<userService.model.Users> findAll()
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findAll();
     }
@@ -802,7 +794,7 @@ public class UsersUtil {
     * Returns a range of all the userses.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param start the lower bound of the range of userses
@@ -810,9 +802,8 @@ public class UsersUtil {
     * @return the range of userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findAll(
-        int start, int end)
-        throws com.liferay.portal.kernel.exception.SystemException {
+    public static java.util.List<userService.model.Users> findAll(int start,
+        int end) throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findAll(start, end);
     }
 
@@ -820,7 +811,7 @@ public class UsersUtil {
     * Returns an ordered range of all the userses.
     *
     * <p>
-    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link userService.model.impl.UsersModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
     * @param start the lower bound of the range of userses
@@ -829,8 +820,8 @@ public class UsersUtil {
     * @return the ordered range of userses
     * @throws SystemException if a system exception occurred
     */
-    public static java.util.List<Users> findAll(
-        int start, int end,
+    public static java.util.List<userService.model.Users> findAll(int start,
+        int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException {
         return getPersistence().findAll(start, end, orderByComparator);
@@ -859,7 +850,7 @@ public class UsersUtil {
 
     public static UsersPersistence getPersistence() {
         if (_persistence == null) {
-            _persistence = (UsersPersistence) PortletBeanLocatorUtil.locate(ClpSerializer.getServletContextName(),
+            _persistence = (UsersPersistence) PortletBeanLocatorUtil.locate(userService.service.ClpSerializer.getServletContextName(),
                     UsersPersistence.class.getName());
 
             ReferenceRegistry.registerReference(UsersUtil.class, "_persistence");

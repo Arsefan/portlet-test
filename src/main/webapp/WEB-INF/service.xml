@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
-<service-builder package-path="src.main.java.service">
+<service-builder package-path="userService">
     <author>Yevgen Kogut</author>
     <namespace>UserServices</namespace>
     <entity name="Users" local-service="true" remote-service="false">

@@ -1,7 +1,6 @@
 package userService.service.base;
 
 import userService.service.UsersLocalServiceUtil;
-import userService.model.Users;
 
 import java.util.Arrays;
 
@@ -50,9 +49,7 @@ public class UsersLocalServiceClpInvoker {
     public UsersLocalServiceClpInvoker() {
         _methodName0 = "addUsers";
 
-        _methodParameterTypes0 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes0 = new String[] { "userService.model.Users" };
 
         _methodName1 = "createUsers";
 
@@ -64,9 +61,7 @@ public class UsersLocalServiceClpInvoker {
 
         _methodName3 = "deleteUsers";
 
-        _methodParameterTypes3 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes3 = new String[] { "userService.model.Users" };
 
         _methodName4 = "dynamicQuery";
 
@@ -126,9 +121,7 @@ public class UsersLocalServiceClpInvoker {
 
         _methodName15 = "updateUsers";
 
-        _methodParameterTypes15 = new String[] {
-                "Users"
-            };
+        _methodParameterTypes15 = new String[] { "userService.model.Users" };
 
         _methodName32 = "getBeanIdentifier";
 
@@ -143,7 +136,7 @@ public class UsersLocalServiceClpInvoker {
         Object[] arguments) throws Throwable {
         if (_methodName0.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes0, parameterTypes)) {
-            return UsersLocalServiceUtil.addUsers((Users) arguments[0]);
+            return UsersLocalServiceUtil.addUsers((userService.model.Users) arguments[0]);
         }
 
         if (_methodName1.equals(name) &&
@@ -158,7 +151,7 @@ public class UsersLocalServiceClpInvoker {
 
         if (_methodName3.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes3, parameterTypes)) {
-            return UsersLocalServiceUtil.deleteUsers((Users) arguments[0]);
+            return UsersLocalServiceUtil.deleteUsers((userService.model.Users) arguments[0]);
         }
 
         if (_methodName4.equals(name) &&
@@ -225,7 +218,7 @@ public class UsersLocalServiceClpInvoker {
 
         if (_methodName15.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-            return UsersLocalServiceUtil.updateUsers((Users) arguments[0]);
+            return UsersLocalServiceUtil.updateUsers((userService.model.Users) arguments[0]);
         }
 
         if (_methodName32.equals(name) &&
