@@ -2,8 +2,8 @@
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
-		<portlet-name>portlet-test2</portlet-name>
-		<display-name>portlet-test2</display-name>
+		<portlet-name>mail-portlet</portlet-name>
+		<display-name>mail-portlet</display-name>
 		<portlet-class>MyPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -14,9 +14,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>portlet-test2</title>
-			<short-title>portlet-test2</short-title>
-			<keywords>portlet-test2</keywords>
+			<title>mail-portlet</title>
+			<short-title>mail-portlet</short-title>
+			<keywords>mail-portlet</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>

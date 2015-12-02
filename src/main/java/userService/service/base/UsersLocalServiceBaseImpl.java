@@ -28,7 +28,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.sql.DataSource;
-
 /**
  * Provides the base implementation for the users local service.
  *
