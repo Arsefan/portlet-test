@@ -5,12 +5,9 @@ import com.liferay.mail.service.MailServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.mail.MailMessage;
 import com.liferay.util.bridges.mvc.MVCPortlet;
-import src.main.java.service.model.UsersClp;
-import src.main.java.service.service.UsersLocalServiceWrapper;
-import src.main.java.service.service.impl.UsersLocalServiceImpl;
-//import userService.model.UsersClp;
-//import userService.service.UsersLocalServiceWrapper;
-//import userService.service.impl.UsersLocalServiceImpl;
+import userService.model.UsersClp;
+import userService.service.UsersLocalServiceWrapper;
+import userService.service.impl.UsersLocalServiceImpl;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
