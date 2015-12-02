@@ -72,7 +72,6 @@ public class MyPortlet extends MVCPortlet{
         String senderMailAddress = "liferay@gmail.com";
         String receiverMailAddress = "evgen.kogut.89@gmail.com";
 
-        System.out.println("1111" + mailBody);
         try {
             MailMessage mailMessage = new MailMessage();
             mailMessage.setBody(mailBody);

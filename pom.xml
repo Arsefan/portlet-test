@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<liferay.version>6.2.2</liferay.version>
 		<liferay.maven.plugin.version>6.2.2</liferay.maven.plugin.version>
-		<liferay.home.dir>C:/IDE/liferay-portal-6.2-ce-ga4</liferay.home.dir>
+		<liferay.home.dir>D:/JetBrains/liferay-portal-6.2-ce-ga4</liferay.home.dir>
 		<liferay.auto.deploy.dir>${liferay.home.dir}/deploy</liferay.auto.deploy.dir>
 	</properties>
 
@@ -71,7 +71,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!--<dependencyManagement>-->
 		<dependencies>
 			<dependency>
 				<groupId>com.liferay.portal</groupId>
@@ -127,11 +126,5 @@
 				<!--<version>4.2.1</version>-->
 			<!--</dependency>-->
 		</dependencies>
-	<!--</dependencyManagement>-->
-
-	<!--<modules>-->
-		<!--<module>liferay-portlets</module>-->
-		<!--<module>liferay-themes</module>-->
-	<!--</modules>-->
 
 </project>
