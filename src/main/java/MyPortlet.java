@@ -65,7 +65,7 @@ public class MyPortlet extends MVCPortlet{
             mailMessage.setBody(mailBody);
             Writer w = response.getWriter();
             MailServiceUtil.sendEmail(mailMessage);
-            w.write("message wos send on email "+ receiverMailAddress + " successfully");
+            w.write("message wos send on email "+ receiverMailAddress);
         } catch (Exception e) {
             e.printStackTrace();
         }
