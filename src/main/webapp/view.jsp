@@ -18,4 +18,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>mail-portlet  db</b>.
+This is the <b>mail-portlet. </b>.

@@ -4,7 +4,7 @@
     <author>Yevgen Kogut</author>
     <namespace>UserServices</namespace>
     <entity name="Users" local-service="true" remote-service="false">
-        <column name="userId" type="long" primary="true" />
+        <column name="userId" type="long" primary="true"/>
         <column name="userName" type="String" />
         <column name="email" type="String" />
         <column name="text" type="String" />
