@@ -65,14 +65,14 @@ public class MyPortlet extends MVCPortlet{
             e.printStackTrace();
         }
         try {
-            sendMailMessage(usersClp);
+            sendMailMessage(usersClp, response);
             Writer w = response.getWriter();
-            w.write("message");
+            w.write("message-1");
         } catch (AddressException e) {
             e.printStackTrace();
         }
     }
-    public void sendMailMessage(@NotNull UsersClp user)
+    public void sendMailMessage(@NotNull UsersClp user, RenderResponse response)
             throws IOException, PortletException, AddressException {
         System.out.println("====sendMailMessage===");
 //        String mailSubject= ParamUtil.getString(actionRequest, "mailSubject");
@@ -91,6 +91,8 @@ public class MyPortlet extends MVCPortlet{
             mailMessage.setFrom(new InternetAddress(senderMailAddress));
             mailMessage.setTo(new InternetAddress(receiverMailAddress));
             MailServiceUtil.sendEmail(mailMessage);
+            Writer w = response.getWriter();
+            w.write("message-2");
 //            SessionMessages.add(actionRequest.getPortletSession(), "mail-send-success");
         } catch (Exception e) {
             e.printStackTrace();
